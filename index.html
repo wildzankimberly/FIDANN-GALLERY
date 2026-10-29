@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fidan Gallery — Digital Classical Art Sanctuary</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                FIDAN GALLERY
+                <span>CURATED CLASSICS</span>
+            </a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#artists">Artists</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="icon-btn" id="searchToggleBtn" aria-label="Toggle Search">
+                    <i data-lucide="search"></i>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Search Overlay Box -->
+        <div class="search-overlay" id="searchOverlay">
+            <div class="search-input-wrapper">
+                <i data-lucide="search"></i>
+                <input type="text" id="overlaySearchInput" placeholder="Search by artwork, artist, or movement..." autocomplete="off">
+                <button class="close-search" id="closeSearchBtn"><i data-lucide="x"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+        <div class="hero-bg" id="heroBg"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <span class="hero-subtitle">WELCOME TO FIDAN GALLERY</span>
+            <h1 class="hero-title">Discover The Beauty of Classical Art</h1>
+            <p class="hero-description">
+                Explore timeless masterpieces that capture the beauty, emotion, and history of art across centuries.
+            </p>
+            <div class="hero-buttons">
+                <a href="#gallery" class="btn btn-primary">
+                    <span>Explore Gallery</span>
+                    <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="#artists" class="btn btn-outline">
+                    <span>Discover Artists</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator">
+            <span>SCROLL</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- MAIN GALLERY SECTION -->
+    <section class="gallery-section" id="gallery">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">CURATED SELECTION</span>
+                <h2 class="section-title">Masterpieces Collection</h2>
+                <div class="gold-divider"></div>
+            </div>
+
+            <!-- Search & Filter Controls -->
+            <div class="controls-wrapper">
+                <div class="search-bar-main">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" id="mainSearchInput" placeholder="Search artworks, artists, or movements...">
+                    <button id="clearSearchBtn" class="clear-btn hidden"><i data-lucide="x"></i></button>
+                </div>
+
+                <div class="filter-categories" id="filterContainer">
+                    <button class="filter-btn active" data-filter="all">All Movements</button>
+                    <button class="filter-btn" data-filter="Renaissance">Renaissance</button>
+                    <button class="filter-btn" data-filter="Baroque">Baroque</button>
+                    <button class="filter-btn" data-filter="Post-Impressionism">Post-Impressionism</button>
+                    <button class="filter-btn" data-filter="Surrealism">Surrealism</button>
+                    <button class="filter-btn" data-filter="Impressionism">Impressionism</button>
+                    <button class="filter-btn" data-filter="Modern Art">Modern Art</button>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Injected via JavaScript -->
+            </div>
+
+            <!-- No Results Message -->
+            <div class="no-results hidden" id="noResults">
+                <i data-lucide="compass"></i>
+                <h3>No artwork found</h3>
+                <p>We couldn't find any artwork matching your criteria. Try adjusting your search term or filter.</p>
+                <button class="btn btn-outline" id="resetFiltersBtn">Reset Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEGENDARY ARTISTS SECTION -->
+    <section class="artists-section" id="artists">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">MASTERS OF THE CRAFT</span>
+                <h2 class="section-title">Legendary Artists</h2>
+                <div class="gold-divider"></div>
+            </div>
+
+            <div class="artists-grid" id="artistsGrid">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about">
+        <div class="section-container">
+            <div class="about-wrapper">
+                <div class="about-image-wrapper">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/600px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" alt="Fidan Gallery Sanctuary" class="about-img" loading="lazy">
+                    <div class="about-frame-accent"></div>
+                </div>
+
+                <div class="about-content">
+                    <span class="section-tag">OUR VISION</span>
+                    <h2 class="section-title">About Fidan Gallery</h2>
+                    <div class="gold-divider left-aligned"></div>
+
+                    <blockquote class="about-quote">
+                        "Fidan Gallery is a digital sanctuary for timeless art. We bring together extraordinary masterpieces from different eras, allowing everyone to explore the stories, emotions, and creativity behind the world's most iconic artworks."
+                    </blockquote>
+
+                    <p class="about-text">
+                        Founded with a passion for preserving visual history, Fidan Gallery serves as an immersive digital archive. We bridge the gap between historic museum halls and modern global audiences, ensuring classical beauty remains accessible, inspiring, and forever immortalized.
+                    </p>
+
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">12+</span>
+                            <span class="stat-label">Iconic Masterpieces</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">6+</span>
+                            <span class="stat-label">Artistic Movements</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Public Domain Heritage</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">CONNECT WITH US</span>
+                <h2 class="section-title">Inquiries & Curatorial Support</h2>
+                <div class="gold-divider"></div>
+            </div>
+
+            <div class="contact-card">
+                <p>Have questions regarding art provenance, licensing, or high-resolution gallery archives?</p>
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for reaching out to Fidan Gallery. We will respond to your inquiry shortly.');">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email Address" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <textarea rows="4" placeholder="Your Message or Inquiry..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#hero" class="nav-logo">
+                    FIDAN GALLERY
+                    <span>CURATED CLASSICS</span>
+                </a>
+                <p class="footer-desc">
+                    A world-class digital sanctuary honoring classical fine arts, historic movements, and legendary creators across the ages.
+                </p>
+            </div>
+
+            <div class="footer-links-group">
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#artists">Artists</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Movements</h4>
+                    <ul>
+                        <li><a href="#gallery">High Renaissance</a></li>
+                        <li><a href="#gallery">Dutch Golden Age</a></li>
+                        <li><a href="#gallery">Post-Impressionism</a></li>
+                        <li><a href="#gallery">Surrealism</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>&copy; <span id="currentYear"></span> Fidan Gallery. Celebrating Art Beyond Time.</p>
+                <div class="footer-socials">
+                    <span>Public Domain Art Initiative</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DETAIL LUKISAN -->
+    <div class="modal-overlay" id="artworkModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-card">
+            <button class="modal-close" id="modalCloseBtn" aria-label="Close Modal">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamic Content Injected JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button class="back-to-top" id="backToTopBtn" aria-label="Back to Top">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
